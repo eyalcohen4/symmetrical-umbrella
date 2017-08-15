@@ -1,0 +1,8 @@
+<div class="tabs">
+	<div ng-repeat="item in ::vm.items | orderBy: $index track by $index" class="tab">
+			<a class="tab__link">
+				<img ng-src="{{ ::item.image }}" class="tab__link__image">
+				<span class="tab__link__text"> {{ item.text }} </span>
+			</a>
+	</div>
+</div>
