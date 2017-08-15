@@ -1,17 +1,29 @@
 {
+  "private": true,
   "name": "myplay",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --history-api-fallback --inline --progress --host=0.0.0.0 --port=8000 --config webpack/webpack.dev.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Eyal Cohen <eyalcohen4.ec@gmail.com>",
   "devDependencies": {
-    "webpack": "^3.5.4",
-    "webpack-dev-middleware": "^1.12.0",
-    "webpack-dev-server": "^2.7.1"
+    "babel-core": "6.25.x",
+    "babel-loader": "7.1.x",
+    "babel-preset-env": "1.6.x",
+    "css-loader": "0.28.x",
+    "extract-text-webpack-plugin": "3.0.x",
+    "file-loader": "0.11.x",
+    "html-loader": "0.5.x",
+    "html-webpack-plugin": "2.30.x",
+    "resolve-url-loader": "2.1.x",
+    "sass-loader": "6.0.x",
+    "style-loader": "0.18.x",
+    "webpack": "3.5.x",
+    "webpack-dev-middleware": "1.12.x",
+    "webpack-dev-server": "2.7.x"
+  },
+  "dependencies": {
+    "@uirouter/angularjs": "1.0.x",
+    "angular": "1.5.x"
   }
 }
