@@ -1,8 +1,21 @@
+@font-face {
+    font-family: 'opensans-hebrew';
+    src: url('../public/fonts/opensanshebrew-regular-webfont.woff2') format('woff2'),
+         url('../public/fonts/opensanshebrew-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body, html, #root {
 	display: flex;
   flex-direction: column;
   flex: 1 0 100%;
   min-height: 100%;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'opensans-hebrew', Arial, Helvetica, sans-serif;
 }
 
 .app {
@@ -39,7 +52,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */

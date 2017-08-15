@@ -31,7 +31,7 @@ module.exports = {
 				test: /\.scss$/,
 				use: ExtractTextPlugin.extract({
 						fallback: 'style-loader',
-						use: ['css-loader', 'resolve-url-loader', 'sass-loader'],
+						use: ['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'],
 				}),
 			},
 			{
@@ -40,6 +40,10 @@ module.exports = {
 					fallback: 'style-loader',
 					use: ['css-loader', 'resolve-url-loader'],
 				}),	
+			},
+			{
+				test: /\.(woff|woff2|ttf|eot)$/,
+				use: ['file-loader?context=src&name=[path][name].[ext]'],
 			},
 			{
 				test: /\.(png|jpg|jpeg|svg)$/,
