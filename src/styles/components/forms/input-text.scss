@@ -1,0 +1,24 @@
+.input-text {
+	position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+	max-width: 100%;
+	width: 100%;
+  margin: 0;
+	display: block;
+
+	&__input {
+		border: none;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+		display: block;
+ 	 	margin: 0;
+ 	 	padding: 7px 0;
+ 	 	background: none;
+ 	 	text-align: right;
+		color: $logo-bg;
+
+		&::placeholder {
+			color: $logo-bg;
+		}
+	}
+}

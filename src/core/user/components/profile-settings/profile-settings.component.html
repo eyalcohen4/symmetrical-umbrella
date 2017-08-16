@@ -2,8 +2,37 @@
 	<div class="profile-settings__header"></div>
 
 	<form class="profile-settings__form">
-		<profile-image class="profile-settings__form__image" ng-src="{{ ::vm.profileImage }}"></profile-image>
+		<profile-image class="profile-settings__form__image" ng-src="{{ vm.profileImage | trustURL }}"></profile-image>
 
+		<div class="profile-settings__form__input profile-settings__form__input--image">
+			<input-file text="עדכן תמונה" id="profile-settings-upload" accept="images/*" preview="vm.profileImage" ng-model="vm.profileImage"></input-file>
+		</div>
+
+		<div class="profile-settings__form__input">
+			<input-text type="text" placeholder="שם" id="first-name" ng-model="vm.form.firstName" >
+		</div>
+
+		<div class="profile-settings__form__input">
+			<input-text type="text" placeholder="שם משפחה" id="last-name" ng-model="vm.form.lastName">
+		</div>
+
+		<div class="profile-settings__form__input">
+			<input-text type="password" placeholder="סיסמא" id="password" ng-model="vm.form.password">
+		</div>
+
+		<div class="profile-settings__form__input">
+			<input-text type="password" placeholder="סיסמא חדשה" id="new-password" ng-model="vm.form.newPassword">
+		</div>
+
+		<div class="profile-settings__form__input">
+			<input-text type="tel" placeholder="טלפון" id="tel" ng-model="vm.form.tel">
+		</div>
+
+		<button class="profile-settings__form__save" ng-click="vm.submit()">
+			שמור שינויים
+		</button>
+
+		<span ng-show="vm.error" class="profile-settings__form__error"> {{ vm.error }} </span>
 		
 	</form>
 </div>
