@@ -7,7 +7,7 @@
 
 .tab {
 	flex: 1;
-	padding: 7px;
+	padding: 7px 2px;
 	text-align: center; 
 
 	&__link { 
@@ -19,8 +19,8 @@
 
 		&__image {
 			display: block;
-			height: 44px;
-			width: 44px;
+			height: 60px;
+			width: 60px;
 			padding: 0 0 8px 0;
 		}
 

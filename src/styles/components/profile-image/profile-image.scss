@@ -1,9 +1,11 @@
 .profile-image {
 	height: 100%;
+	width: inherit;
 	
 	&__image {
 		display: block;
 		height: 100%;
+		width: inherit;
 		border-radius: 50%;
 	}
 }
