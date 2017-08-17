@@ -1,8 +1,7 @@
-import template from './input-text.component.html';
+import template from './input-text.directive.html';
 
 
 function controller() {
-
 }
 
 function link(scope, element, attr, ngModel) {
@@ -11,6 +10,10 @@ function link(scope, element, attr, ngModel) {
 	input.on('input change', (e) => {
 		ngModel.$setViewValue(event.target.value);
 	});
+	
+	ngModel.$render = () => {
+		input.val(ngModel.$viewValue);
+	};
 }
 
 export default function inputTextDirective() {

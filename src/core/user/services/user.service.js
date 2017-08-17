@@ -7,8 +7,12 @@ class UserService {
 	}
 
 	setUser() {
-		this.api.getUser().then(user => { 
-			this.user = user;
+		return this.api.getUser().then(response => {
+			if (response.status === 200) {
+				this.user = response.data;
+			}
+
+			return this.user;
 		});
 	}
 }

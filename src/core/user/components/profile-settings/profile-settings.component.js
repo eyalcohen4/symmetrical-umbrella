@@ -3,18 +3,23 @@ import template from './profile-settings.component.html';
 
 class ProfileSettingsComponent {
 	constructor(apiService, userService) {
-		this.api = apiService;
-		this.profileImage = 'public/dagan.png';
+		this.api   = apiService;
 		this.error = '';
-		this.user = userService.user;
-		console.log(this.user);
+		this.user  = userService.user;
+
+		this.profileImage = 'public/dagan.png';
+		
+		if (this.user) {
+			this.profileImage = this.user.image;
+		}
+
 		this.form = {
-			firstName: '',
-			lastName: '',
-			password: '',
+			firstName: this.user && this.user.firstName || '',
+			lastName: this.user && this.user.lastName || '',
+			password: this.user && this.user.password || '',
+			image: this.user && this.user.image || '',
+			tel: this.user && this.user.tel || '',
 			newPassword: '',
-			image: '',
-			tel: '',
 		}
 	}
 
@@ -23,7 +28,7 @@ class ProfileSettingsComponent {
 		const reader = new FileReader();
 
 		reader.onload = (e) => {
-			this.form.image = e.target.result;
+			this.profileImage = e.target.result;
 		}
 
 		if (image.files[0]) { 
@@ -44,9 +49,12 @@ class ProfileSettingsComponent {
 			this.form.password = this.form.newPassword;
 		}
 
-		this.api.saveUser(this.form);
+		if (!this.error) { 
+			this.api.saveUser(this.form, this.profileImage).then(() => window.location.reload());
+		}
 	}
 }
+
 export default {
 	template,
 	controller: ProfileSettingsComponent,

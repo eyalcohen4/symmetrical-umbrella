@@ -15,10 +15,11 @@
  	 	padding: 7px 0;
  	 	background: none;
  	 	text-align: right;
-		color: $logo-bg;
+		color: $primary-color;
+		width: inherit;
 
 		&::placeholder {
-			color: $logo-bg;
+			color: $primary-color;
 		}
 	}
 }

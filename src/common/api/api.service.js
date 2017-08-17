@@ -19,10 +19,13 @@ class Api {
 		return this.sendRequest('GET', 'getUser');
 	}
 
-	saveUser(user) {
+	saveUser(user, image) {
 		const payload = new FormData();
 
-		payload.append('image', user.image);
+		if (user.image) {
+			payload.append('image', image);
+		}
+
 		payload.append('firstName', user.firstName);
 		payload.append('lastName', user.lastName);
 		payload.append('password', user.password);

@@ -5,7 +5,7 @@
 		<profile-image class="profile-settings__form__image" ng-src="{{ vm.profileImage | trustURL }}"></profile-image>
 
 		<div class="profile-settings__form__input profile-settings__form__input--image">
-			<input-file text="עדכן תמונה" id="profile-settings-upload" accept="images/*" preview="vm.profileImage" ng-model="vm.profileImage"></input-file>
+			<input-file text="עדכן תמונה" id="profile-settings-upload" accept="image/png, image/jpeg, image/jpg" preview="vm.profileImage" ng-model="vm.profileImage"></input-file>
 		</div>
 
 		<div class="profile-settings__form__input">

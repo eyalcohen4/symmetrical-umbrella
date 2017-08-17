@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-import inputText from './components/input-text.component';
+import inputText from './components/input-text.directive';
 import inputFile from './components/input-file.directive';
 
 const app = angular.module('app.forms', []);
