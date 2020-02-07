@@ -1,5 +1,3 @@
-## MyPlay Client Test
-
 ## Install & Run 
 
 	$ npm install
