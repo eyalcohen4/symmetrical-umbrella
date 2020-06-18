@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@uirouter/angularjs": "1.0.x",
-    "angular": "1.5.x",
+    "angular": "1.8.x",
     "body-parser": "^1.17.2",
     "express": "4.15.x",
     "express-fileupload": "^0.1.4",
